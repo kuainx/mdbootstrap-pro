@@ -1,0 +1,54 @@
+@import '../core/colors';
+@import '../core/variables';
+@import '../pro/variables';
+@import '../pro/mixins';
+
+
+@supports (--css: variables) {
+  input[type="range"].mdbMultiRange {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+
+    &.original {
+      position: absolute;
+
+      &::-webkit-slider-thumb {
+        position: relative;
+        z-index: 2;
+      }
+
+      &::-moz-range-thumb {
+        transform: scale(1);
+        z-index: 1;
+      }
+    }
+
+    &::-moz-range-track {
+      border-color: transparent;
+    }
+
+    &.ghost {
+      position: relative;
+
+      &:nth-of-type(n+1) {
+        position: absolute;
+      }
+    }
+  }
+}
+
+.multi-range-field {
+  @include range;
+}
+
+.thumb-horizontal-wrapper {
+  position: relative;
+  transform: rotate(-270deg);
+  top: 500px;
+}
+
+.multi-range-field input[type=range]+.thumb-horizontal .value {
+  transform: rotate(315deg) !important;
+}

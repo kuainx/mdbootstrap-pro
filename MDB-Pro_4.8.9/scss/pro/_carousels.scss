@@ -1,0 +1,116 @@
+// CAROUSELS PRO
+.carousel-multi-item {
+  margin-bottom: $carousel-multi-item-mb;
+
+  .carousel-inner .carousel-item.active,
+  .carousel-item-next,
+  .carousel-item-prev {
+    display: block;
+  }
+
+  .carousel-inner.v-2 .carousel-item.active,
+  .carousel-inner.v-2 .carousel-item-next,
+  .carousel-inner.v-2 .carousel-item-prev {
+    display: flex;
+  }
+
+  .carousel-inner.v-2 .carousel-item-right.active,
+  .carousel-inner.v-2 .carousel-item-next {
+    transform: translateX(33%);
+  }
+
+  .carousel-inner.v-2 .carousel-item-left.active,
+  .carousel-inner.v-2 .carousel-item-prev {
+    transform: translateX(-33%);
+  }
+
+  .carousel-inner.v-2 .carousel-item-right,
+  .carousel-inner.v-2 .carousel-item-left {
+    transform: translateX(0);
+  }
+
+  .carousel-indicators li {
+    height: $carousel-multi-item-indicators-li-height;
+    width: $carousel-multi-item-indicators-li-width;
+    max-width: $carousel-multi-item-indicators-li-max-width;
+    background-color: $primary-color;
+    margin-bottom: $carousel-multi-item-indicators-li-mb;
+  }
+
+  .carousel-indicators .active {
+    height: $carousel-multi-item-indicators-active-height;
+    width: $carousel-multi-item-indicators-active-width;
+    max-width: $carousel-multi-item-indicators-active-max-width;
+    background-color: $primary-color;
+    border-radius: $carousel-multi-item-indicators-active-border-radius;
+  }
+
+  .controls-top {
+    text-align: center;
+    margin-bottom: $carousel-multi-item-controls-top-mb;
+
+    .btn-floating {
+      background: $primary-color;
+    }
+  }
+
+  .carousel-indicators {
+    margin-bottom: $carousel-multi-item-indicators-mb;
+  }
+
+  .card-cascade.narrower {
+    margin-top: $carousel-multi-item-card-cascade-narrower-mt;
+    margin-bottom: $carousel-multi-item-card-cascade-narrower-mb;
+  }
+
+  @media (min-width: 768px) {
+    .col-md-4 {
+      float: left;
+      width: 33.333333%;
+      max-width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: $medium-screen) {
+  .carousel-multi-item {
+    .carousel-indicators li {
+      margin-bottom: $carousel-multi-item-medium-screen-mb;
+    }
+  }
+}
+
+// Carousel with thumbnails
+.carousel-thumbnails {
+  .carousel-indicators {
+    white-space: nowrap;
+    overflow-x: auto;
+    position: static;
+    left: initial;
+    width: initial;
+    margin-left: initial;
+    margin-right: initial;
+
+    >li {
+      width: initial;
+      height: initial;
+      text-indent: initial;
+
+      .active {
+        img {
+          opacity: $carousel-thumbnails-indicators-active-opacity;
+        }
+      }
+    }
+  }
+}
+
+// Fix for testimontials (class use in bs js)
+.wrapper-carousel-fix .carousel-fade .active {
+
+  &.carousel-item-left,
+  &.carousel-item-right {
+    transition: transform 0.6s ease;
+    transition-property: opacity;
+  }
+}
