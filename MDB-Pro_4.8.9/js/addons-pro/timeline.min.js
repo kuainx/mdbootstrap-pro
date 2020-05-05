@@ -1,1 +1,0 @@
-$(window).scroll(function(){$(".timeline-animated li").each(function(){var i=$(window).scrollTop(),o=$(this).offset().top,n=o-i,d=$(window).height(),e=.9*d;n>e&&$(this).addClass("more-padding"),n<e&&$(this).removeClass("more-padding")})});
